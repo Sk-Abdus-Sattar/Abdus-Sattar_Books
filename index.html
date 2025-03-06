@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdus Sattar Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .book {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .book-info {
+            margin-top: 10px;
+        }
+        .upcoming-books {
+            margin-top: 40px;
+            text-align: left;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .book, .upcoming-books {
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Welcome to Abdus Sattar's Book Collection</header>
+    <main>
+        <section class="book">
+            <img src="Banner%20AI.jpg" alt="ChatGPT & AI for Beginners Book Cover">
+            <div class="book-info">
+                <h2>ChatGPT & AI for Beginners</h2>
+                <p>Author: Sk Abdus Sattar</p>
+                <p>Price: <strong>₹149</strong> on Google Play Books</p>
+            </div>
+        </section>
+        
+        <section class="upcoming-books">
+            <h2>Upcoming Books</h2>
+            <ul>
+                <li><strong>Mastering ChatGPT</strong> - Unlocking AI for Business, Learning, and Productivity</li>
+                <li><strong>Earning with AI</strong> - How to Make Money Using ChatGPT</li>
+                <li><strong>Note:</strong>There is a sale of ₹100 for the first 50 buyers, after 50 purchases the price will increase!</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Abdus Sattar. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
