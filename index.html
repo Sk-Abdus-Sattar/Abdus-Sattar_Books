@@ -20,8 +20,8 @@
         header {
             background: #333;
             color: white;
-            padding: 20px;
-            font-size: 24px;
+            padding: 15px;
+            font-size: 22px;
             font-weight: bold;
         }
         .book-section {
@@ -29,23 +29,22 @@
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
-            width: 90%;
+            width: 95%;
             max-width: 600px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            text-align: center;
         }
         .book img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 10px;
             display: block;
-            margin: 10px auto;
+            object-fit: contain;
         }
         #countdown {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             color: #ff0000;
-            text-align: center;
             margin-top: 10px;
         }
         footer {
@@ -55,6 +54,18 @@
             color: white;
             font-size: 14px;
         }
+        @media (max-width: 600px) {
+            header {
+                font-size: 18px;
+            }
+            .book-section {
+                width: 100%;
+                padding: 15px;
+            }
+            #countdown {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,12 +74,12 @@
         <section class="book-section">
             <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover" loading="lazy">
             <div class="book-info">
-                <h2 style="text-align: center">ChatGPT & AI for Beginners</h2>
+                <h2>ChatGPT & AI for Beginners</h2>
                 <p><strong>Author:</strong> Sk Abdus Sattar</p>
                 <p><strong>Price:</strong> ₹149 on Google Play Books</p>
                 <p><strong>Sale:</strong> First 50 buyers get ₹100 off!</p>
                 <p><strong>Availability:</strong> The book will be available on Play Books soon.</p>
-                <p style="text-align: center;"><strong>Time Left for Release:</strong></p>
+                <p><strong>Time Left for Release:</strong></p>
                 <p id="countdown"></p>
             </div>
         </section>
@@ -111,3 +122,4 @@
     </script>
 </body>
 </html>
+
