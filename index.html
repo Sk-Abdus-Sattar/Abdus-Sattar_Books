@@ -64,14 +64,13 @@
     <header>Welcome to Abdus Sattar's Book Collection</header>
     <main>
         <section class="Recent-Books">
-            <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover" height="500" width="500">
+            <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover">
             <div class="book-info">
                 <h2 style="text-align: center">ChatGPT & AI for Beginners</h2>
                 <p><strong>Author:</strong> Sk Abdus Sattar</p>
                 <p><strong>Price:</strong> ₹149 on Google Play Books</p>
                 <p><strong>Note:</strong> There is a sale of ₹100 for the first 50 buyers, after 50 purchases the price will increase!</p>
-                <p><strong>Note:</strong> The book will be available in Play Books after few time.</p>
-                
+                <p><strong>Note:</strong> The book will be available in Play Books after some time.</p>
                 <p style="text-align: center;"><strong>Time Left for Release:</strong></p>
                 <p id="countdown"></p>
             </div>
@@ -79,9 +78,9 @@
         
         <section class="upcoming-books">
             <h2 style="text-align: center;">Upcoming Books</h2>
-            <img src="upcoming books image 1.webp" alt="Upcoming Secret" height="500" width="500">
+            <img src="upcoming_books_image_1.webp" alt="Upcoming Secret">
             <p style="text-align: center"><strong>Mastering AI Tools</strong> - Unlocking AI for Business, Learning, and Productivity</p>
-            <img src="upcoming books image 2.webp" alt="Upcoming Secret" height="500" width="500">
+            <img src="upcoming_books_image_2.webp" alt="Upcoming Secret">
             <p style="text-align: center"><strong>Earning with AI</strong> - How to Make Money Using ChatGPT</p>
         </section>
     </main>
@@ -104,16 +103,13 @@
             }
         });
 
-        function startCountdown(duration) {
+        function startCountdown(targetTime) {
             let countdownElement = document.getElementById("countdown");
-            let endTime = new Date().getTime() + duration * 1000;
-            
             function updateCountdown() {
                 let now = new Date().getTime();
-                let timeLeft = endTime - now;
-                
+                let timeLeft = targetTime - now;
                 if (timeLeft > 0) {
-                    let hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                    let hours = Math.floor((timeLeft / (1000 * 60 * 60)));
                     let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
                     let seconds = Math.floor((timeLeft / 1000) % 60);
                     countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
@@ -124,10 +120,13 @@
             }
             updateCountdown();
         }
-        
-        startCountdown(22 * 60 * 60);
+
+        let releaseTime = localStorage.getItem("releaseTime");
+        if (!releaseTime) {
+            releaseTime = new Date().getTime() + (21 * 60 * 60 * 1000) + (30 * 60 * 1000); // 21 hours 30 minutes
+            localStorage.setItem("releaseTime", releaseTime);
+        }
+        startCountdown(parseInt(releaseTime));
     </script>
-        
-        
 </body>
 </html>
