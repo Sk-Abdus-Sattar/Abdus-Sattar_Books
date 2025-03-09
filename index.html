@@ -78,9 +78,9 @@
         
         <section class="upcoming-books">
             <h2 style="text-align: center;">Upcoming Books</h2>
-            <img src="upcoming_books_image_1.webp" alt="Upcoming Secret">
+            <img src="upcoming books image 1.webp" alt="Upcoming Secret">
             <p style="text-align: center"><strong>Mastering AI Tools</strong> - Unlocking AI for Business, Learning, and Productivity</p>
-            <img src="upcoming_books_image_2.webp" alt="Upcoming Secret">
+            <img src="upcoming books image 2.webp" alt="Upcoming Secret">
             <p style="text-align: center"><strong>Earning with AI</strong> - How to Make Money Using ChatGPT</p>
         </section>
     </main>
@@ -105,9 +105,11 @@
 
         function startCountdown(targetTime) {
             let countdownElement = document.getElementById("countdown");
+
             function updateCountdown() {
                 let now = new Date().getTime();
                 let timeLeft = targetTime - now;
+
                 if (timeLeft > 0) {
                     let hours = Math.floor((timeLeft / (1000 * 60 * 60)));
                     let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
@@ -116,17 +118,22 @@
                     setTimeout(updateCountdown, 1000);
                 } else {
                     countdownElement.textContent = "Released!";
+                    localStorage.removeItem("releaseTime"); // Reset for next visit
                 }
             }
             updateCountdown();
         }
 
         let releaseTime = localStorage.getItem("releaseTime");
+
         if (!releaseTime) {
-            releaseTime = new Date().getTime() + (21 * 60 * 60 * 1000) + (30 * 60 * 1000); // 21 hours 30 minutes
+            // Ensuring the time is stored correctly without extra delays
+            releaseTime = Math.floor(new Date().getTime() / 1000) * 1000 + (21 * 60 * 60 * 1000) + (10 * 60 * 1000);
             localStorage.setItem("releaseTime", releaseTime);
         }
+
         startCountdown(parseInt(releaseTime));
     </script>
 </body>
 </html>
+
