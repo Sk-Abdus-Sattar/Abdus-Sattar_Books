@@ -24,31 +24,23 @@
             font-size: 24px;
             font-weight: bold;
         }
-        .book {
+        .book, .upcoming-books, .feedback {
             background: white;
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 400px;
+            max-width: 600px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
-        .book img {
+        .book img, .upcoming-books img {
             max-width: 100%;
             border-radius: 10px;
+            display: block;
+            margin: 10px auto;
         }
-        .book-info {
-            margin-top: 10px;
-        }
-        .upcoming-books {
-            margin-top: 40px;
-            text-align: left;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        ul {
+            padding-left: 20px;
         }
         footer {
             margin-top: 20px;
@@ -57,9 +49,21 @@
             color: white;
             font-size: 14px;
         }
-        @media (min-width: 768px) {
-            .book, .upcoming-books {
-                max-width: 600px;
+        .feedback button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #ff6600;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .book, .upcoming-books, .feedback {
+                max-width: 400px;
             }
         }
     </style>
@@ -70,38 +74,46 @@
         <section class="book">
             <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover">
             <div class="book-info">
-                <h2>ChatGPT & AI for Beginners</h2>
-                <p>Author: Sk Abdus Sattar</p>
-                <p>Price: <strong>₹149</strong> on Google Play Books</p>
-                <p><strong>Note:</strong>There is a sale of ₹100 for the first 50 buyers, after 50 purchases the price will increase!</p>
-
+                <h2 style="text-align: center">ChatGPT & AI for Beginners</h2>
+                <p><strong>Author:</strong> Sk Abdus Sattar</p>
+                <p><strong>Price:</strong> ₹149 on Google Play Books</p>
+                <p><strong>Note:</strong> There is a sale of ₹100 for the first 50 buyers, after 50 purchases the price will increase!</p>
+                <p><strong>Note:</strong> The book is still not available on Play Store</p>
             </div>
         </section>
         
         <section class="upcoming-books">
-            <h2>Upcoming Books</h2>
-            <ul>
-                <br>
-                <li><strong>Mastering AI Tools</strong> - Unlocking AI for Business, Learning, and Productivity</li>
-                <br>
-                <li><strong>Earning with AI</strong> - How to Make Money Using ChatGPT</li>
-            </ul>
+            <h2 style="text-align: center;">Upcoming Books</h2>
+            
+                
+                    <img src="upcoming books image 1.webp" alt="Upcoming Secret">
+                    <p style="text-align: center"><strong>Mastering AI Tools</strong> - Unlocking AI for Business, Learning, and Productivity</p>
+                
+                
+                    <img src="upcoming books image 2.webp" alt="Upcoming Secret">
+                    <p style="text-align: center"><strong>Earning with AI</strong> - How to Make Money Using ChatGPT</p>
+                
+            
+        </section>
+        
+        <section class="feedback">
+            <h2>Feedback</h2>
+            <p>We would love to hear your thoughts!</p>
+            <button onclick="window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=skabdussatarbuisness@gmail.com', '_blank')">Send Feedback</button>
+
         </section>
     </main>
     <footer>
         <p>&copy; 2025 Abdus Sattar. All Rights Reserved.</p>
     </footer>
-    <footer>
-        <p>&copy; 2025 Abdus Sattar. All Rights Reserved.</p>
-    </footer>
-
+    
     <script>
         document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
         });
     
         document.addEventListener("keydown", function (e) {
-            if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "s" || e.key === "S")) {
+            if (e.ctrlKey && (e.key.toLowerCase() === "u" || e.key.toLowerCase() === "s")) {
                 e.preventDefault();
             }
             if (e.keyCode === 123) {
@@ -109,7 +121,5 @@
             }
         });
     </script>
-    
-
 </body>
 </html>
