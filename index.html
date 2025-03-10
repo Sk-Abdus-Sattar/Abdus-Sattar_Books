@@ -75,25 +75,53 @@
         }
         #gmailButton {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #d14836; /* Gmail red */
+            bottom: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background-color: #d14836;
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 50%; /* Make it round */
-            z-index: 1000; /* Ensure it's on top */
+            border-radius: 50%;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #gmailButton img {
+            width: 25px;
+            height: 25px;
         }
         #emailPopup {
             display: none;
             position: fixed;
-            bottom: 20px;
-            right: 100px; /* Adjust position relative to the button */
+            bottom: 60px;
+            right: 10px;
             background-color: white;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ccc;
             z-index: 1000;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        @media (max-width: 600px) {
+            #gmailButton {
+                bottom: 5px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+            }
+            #gmailButton img {
+                width: 20px;
+                height: 20px;
+            }
+            #emailPopup {
+                bottom: 50px;
+                right: 5px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -131,11 +159,12 @@
     </footer>
 
     <button id="gmailButton">
-        <img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png" alt="Gmail Icon" width="30" height="30">
+        <img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png" alt="Gmail Icon">
     </button>
 
     <div id="emailPopup">
-        skabdussatarbuisness@gmail.com
+        skabdussatarbuisness@gmail.com <br>
+        <button onclick="window.location.href = 'mailto:skabdussatarbuisness@gmail.com?subject=Website%20Feedback&body=Your%20Feedback%20Here:'">Send Email</button>
     </div>
 
     <script>
@@ -182,4 +211,3 @@
     </script>
 </body>
 </html>
-
