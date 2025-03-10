@@ -24,7 +24,7 @@
             font-size: 22px;
             font-weight: bold;
         }
-        .book-section {
+        .book-section, .upcoming-books-section {
             background: white;
             border-radius: 10px;
             padding: 20px;
@@ -41,10 +41,17 @@
             display: block;
             object-fit: contain;
         }
+        .upcoming-books-section img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            object-fit: contain;
+        }
         #countdown {
             font-size: 20px;
             font-weight: bold;
-            color: #ff0000;
+            color: #51b1f1;
             margin-top: 10px;
         }
         footer {
@@ -66,6 +73,28 @@
                 font-size: 18px;
             }
         }
+        #gmailButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #d14836; /* Gmail red */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%; /* Make it round */
+            z-index: 1000; /* Ensure it's on top */
+        }
+        #emailPopup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 100px; /* Adjust position relative to the button */
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -83,12 +112,32 @@
                 <p id="countdown"></p>
             </div>
         </section>
+        <section class="upcoming-books-section">
+            <div class="upcoming-books">
+                <br>
+                <h2 style="text-align: center">Upcoming Books</h2>
+                <br>
+                <img src="upcoming books image 1.webp" alt="Upcoming Secret">
+                <p style="text-align: center;"><strong>Mastering ChatGPT and Other AI Tools</strong></p>
+                <br>
+                <img src="upcoming books image 2.webp" alt="Upcoming Secret">
+                <p style="text-align: center;"><strong>Earning with AI: Unlocking ChatGPT's Full Potential</strong></p>
+            </div>
+        </section>
     </main>
-    
+
     <footer>
         <p>&copy; 2025 Abdus Sattar. All Rights Reserved.</p>
     </footer>
-    
+
+    <button id="gmailButton">
+        <img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png" alt="Gmail Icon" width="30" height="30">
+    </button>
+
+    <div id="emailPopup">
+        skabdussatarbuisness@gmail.com
+    </div>
+
     <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
         document.addEventListener("keydown", e => {
@@ -119,6 +168,17 @@
             updateCountdown();
         }
         startCountdown();
+
+        const gmailButton = document.getElementById('gmailButton');
+        const emailPopup = document.getElementById('emailPopup');
+
+        gmailButton.addEventListener('click', function() {
+            if (emailPopup.style.display === 'none') {
+                emailPopup.style.display = 'block';
+            } else {
+                emailPopup.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
