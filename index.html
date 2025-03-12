@@ -127,7 +127,7 @@
     </div>
 
     <script>
-       /* document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("contextmenu", e => e.preventDefault());
         document.addEventListener("keydown", e => {
             if (e.ctrlKey && ["u", "s", "i", "j"].includes(e.key.toLowerCase()) || e.keyCode === 123) {
                 e.preventDefault();
@@ -139,8 +139,9 @@
             const gmailButton = document.getElementById('gmailButton');
             const emailPopup = document.getElementById('emailPopup');
 
+            // Gmail Button Click Event
             gmailButton.addEventListener('click', function () {
-                emailPopup.style.display = emailPopup.style.display === 'block' ? 'none' : 'block';
+                emailPopup.style.display = (emailPopup.style.display === 'block') ? 'none' : 'block';
             });
 
             function startCountdown() {
@@ -158,14 +159,15 @@
                         countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
                         setTimeout(updateCountdown, 1000);
                     } else {
-                        countdownElement.textContent = "Released!";
+                        countdownElement.style.display = "none"; // Hides the countdown when time is up
                     }
                 }
                 updateCountdown();
             }
 
             startCountdown();
-        });*/
+        });
     </script>
 </body>
 </html>
+
