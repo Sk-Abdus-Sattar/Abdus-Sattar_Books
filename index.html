@@ -34,14 +34,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .book img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-            object-fit: contain;
-        }
-        .upcoming-books-section img{
+        .book img, .upcoming-books-section img {
             width: 100%;
             height: auto;
             border-radius: 10px;
@@ -60,18 +53,6 @@
             background: #333;
             color: white;
             font-size: 14px;
-        }
-        @media (max-width: 600px) {
-            header {
-                font-size: 18px;
-            }
-            .book-section {
-                width: 100%;
-                padding: 15px;
-            }
-            #countdown {
-                font-size: 18px;
-            }
         }
         #gmailButton {
             position: fixed;
@@ -106,51 +87,29 @@
             font-size: 14px;
             white-space: nowrap;
         }
-        @media (max-width: 600px) {
-            #gmailButton {
-                bottom: 5px;
-                right: 5px;
-                width: 35px;
-                height: 35px;
-            }
-            #gmailButton img {
-                width: 20px;
-                height: 20px;
-            }
-            #emailPopup {
-                bottom: 50px;
-                right: 5px;
-                font-size: 12px;
-            }
-        }
     </style>
 </head>
 <body>
     <header>Welcome to Abdus Sattar's Book Collection</header>
     <main>
         <section class="book-section">
-            <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover" height="300" width="50%">
+            <img src="BANNER.png" alt="ChatGPT & AI for Beginners Book Cover">
             <div class="book-info">
                 <h2>ChatGPT & AI for Beginners</h2>
                 <p><strong>Author:</strong> Sk Abdus Sattar</p>
                 <p><strong>Price:</strong> ₹149 on Google Play Books</p>
                 <p><strong>Sale:</strong> First 50 buyers get ₹100 off!</p>
                 <p><strong>Availability:</strong> The book will be available on Play Books soon.</p>
-                <p><strong>Time Left for Release:</strong></p>
+                <p>(The Book is still getting approved by Google Play Books)</p>
                 <p id="countdown"></p>
             </div>
         </section>
         <section class="upcoming-books-section">
-            <div class="upcoming-books">
-                <br>
-                <h2 style="text-align: center">Upcoming Books</h2>
-                <br>
-                <img src="upcoming books image 1.webp" alt="Upcoming Secret">
-                <p style="text-align: center;"><strong>Mastering ChatGPT and Other AI Tools</strong></p>
-                <br>
-                <img src="upcoming books image 2.webp" alt="Upcoming Secret">
-                <p style="text-align: center;"><strong>Earning with AI: Unlocking ChatGPT's Full Potential</strong></p>
-            </div>
+            <h2>Upcoming Books</h2>
+            <img src="upcoming books image 1.webp" alt="Upcoming Secret">
+            <p><strong>Mastering ChatGPT and Other AI Tools</strong></p>
+            <img src="upcoming books image 2.webp" alt="Upcoming Secret">
+            <p><strong>Earning with AI: Unlocking ChatGPT's Full Potential</strong></p>
         </section>
     </main>
 
@@ -168,7 +127,7 @@
     </div>
 
     <script>
-        document.addEventListener("contextmenu", e => e.preventDefault());
+       /* document.addEventListener("contextmenu", e => e.preventDefault());
         document.addEventListener("keydown", e => {
             if (e.ctrlKey && ["u", "s", "i", "j"].includes(e.key.toLowerCase()) || e.keyCode === 123) {
                 e.preventDefault();
@@ -176,38 +135,37 @@
             }
         });
 
-        function startCountdown() {
-            let releaseTime = new Date("March 10, 2025 10:00:00 UTC").getTime();
-            let countdownElement = document.getElementById("countdown");
+        document.addEventListener("DOMContentLoaded", function () {
+            const gmailButton = document.getElementById('gmailButton');
+            const emailPopup = document.getElementById('emailPopup');
 
-            function updateCountdown() {
-                let now = Date.now();
-                let timeLeft = releaseTime - now;
+            gmailButton.addEventListener('click', function () {
+                emailPopup.style.display = emailPopup.style.display === 'block' ? 'none' : 'block';
+            });
 
-                if (timeLeft > 0) {
-                    let hours = Math.floor(timeLeft / (1000 * 60 * 60));
-                    let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
-                    let seconds = Math.floor((timeLeft / 1000) % 60);
-                    countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
-                    setTimeout(updateCountdown, 1000);
-                } else {
-                    countdownElement.textContent = "Released!";
+            function startCountdown() {
+                let releaseTime = new Date("March 10, 2025 10:00:00 UTC").getTime();
+                let countdownElement = document.getElementById("countdown");
+
+                function updateCountdown() {
+                    let now = Date.now();
+                    let timeLeft = releaseTime - now;
+
+                    if (timeLeft > 0) {
+                        let hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                        let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                        let seconds = Math.floor((timeLeft / 1000) % 60);
+                        countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                        setTimeout(updateCountdown, 1000);
+                    } else {
+                        countdownElement.textContent = "Released!";
+                    }
                 }
+                updateCountdown();
             }
-            updateCountdown();
-        }
-        startCountdown();
 
-        const gmailButton = document.getElementById('gmailButton');
-        const emailPopup = document.getElementById('emailPopup');
-
-        gmailButton.addEventListener('click', function() {
-            if (emailPopup.style.display === 'none') {
-                emailPopup.style.display = 'block';
-            } else {
-                emailPopup.style.display = 'none';
-            }
-        });
+            startCountdown();
+        });*/
     </script>
 </body>
 </html>
